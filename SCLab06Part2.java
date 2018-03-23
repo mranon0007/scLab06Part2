@@ -13,7 +13,16 @@ import java.util.*;
  */
 public class SCLab06Part2 {
 
-  
+    //Db credentials
+    public static String user = "root";
+    public static String pass = "1234";
+    public static String connString = "jdbc:mysql://localhost:3307/university";
+        
+    //Db objects
+    public static Connection conn = null;
+    public static Statement st = null;
+    public static ResultSet rs = null;
+    public static String query;
     
     /**
      * @param args the command line arguments
@@ -21,7 +30,7 @@ public class SCLab06Part2 {
     public static void main(String[] args) {
         // TODO code application logic here
         
-       
+        Scanner input = new Scanner(System.in);
         
        
     }
