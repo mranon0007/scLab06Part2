@@ -45,13 +45,17 @@ public class SCLab06Part2 {
         }
         
         //Run program forever
-        try {
-            while(true) {
+        while(true) {
+            try {
                 //Ask for User Choice
                 System.out.println("\nChoose option:\n1.Print All\n2.Search\n3.Delete");
                 System.out.println("---------");
                 String in = input.nextLine();
                 int choice = Integer.parseInt(in);
+                
+                if(choice < 1 || choice > 3) {
+                    throw new Exception("Choose a correct option");
+                }
                 
                 //Keep trying to work on user's choice.
                 while(true) {
@@ -72,8 +76,6 @@ public class SCLab06Part2 {
                                 id = Integer.parseInt(input.nextLine());
                                 deleteRecord(id);
                                 break;
-                            default:
-                                throw new Exception("Choose a correct option");
                         }
 
                         break;
@@ -89,12 +91,11 @@ public class SCLab06Part2 {
                         System.err.println(e);
                     } 
                 } //End while
-            }  //End while
-        } 
-        catch(Exception e) {
-            System.out.println("e3");
-            System.err.println(e);
-        }
+            }  //End Try
+            catch(Exception e) {
+                System.err.println(e);
+            }
+        } //End while
         
     }
     
