@@ -1,0 +1,69 @@
+run:
+jdbc:mysql://localhost:3307/university
+Fri Mar 23 21:54:19 PKT 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Connected to Db.
+
+Choose option:
+1.Print All
+2.Search
+3.Delete
+---------
+1
+
+
+******Printing Students
+RegNo: 1000 Name: Yousuf Class: 5 Section: A Contact: 03001000000 Address: Karachi
+RegNo: 1001 Name: Ahmed Class: 3 Section: B Contact: 03002000000 Address: Lahore
+RegNo: 1002 Name: Ali Class: 2 Section: C Contact: 03003000000 Address: Islamabad
+RegNo: 1003 Name: Zafar Class: 5 Section: A Contact: 03004000000 Address: Peshawar
+RegNo: 1004 Name: Farhan Class: 4 Section: C Contact: 03005000000 Address: Quetta
+************
+
+
+Choose option:
+1.Print All
+2.Search
+3.Delete
+---------
+3
+Enter RegNo:
+1002
+
+Deleted Record.
+
+Choose option:
+1.Print All
+2.Search
+3.Delete
+---------
+2
+Enter RegNo:
+1001
+
+
+******Printing Student
+RegNo: 1001 Name: Ahmed Class: 3 Section: B Contact: 03002000000 Address: Lahore
+************
+
+
+Choose option:
+1.Print All
+2.Search
+3.Delete
+---------
+1
+
+
+******Printing Students
+RegNo: 1000 Name: Yousuf Class: 5 Section: A Contact: 03001000000 Address: Karachi
+RegNo: 1001 Name: Ahmed Class: 3 Section: B Contact: 03002000000 Address: Lahore
+RegNo: 1003 Name: Zafar Class: 5 Section: A Contact: 03004000000 Address: Peshawar
+RegNo: 1004 Name: Farhan Class: 4 Section: C Contact: 03005000000 Address: Quetta
+************
+
+
+Choose option:
+1.Print All
+2.Search
+3.Delete
+---------
