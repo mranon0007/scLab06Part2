@@ -32,7 +32,70 @@ public class SCLab06Part2 {
         
         Scanner input = new Scanner(System.in);
         
-       
+        //Make Connection
+        try{
+            //trying to connect
+            System.out.println(connString);
+            conn = DriverManager.getConnection(connString,user,pass);
+            System.out.println("Connected to Db.");
+        } 
+        //Error in Connection
+        catch(SQLException e) {
+            System.err.println(e);
+        }
+        
+        //Run program forever
+        try {
+            while(true) {
+                //Ask for User Choice
+                System.out.println("\nChoose option:\n1.Print All\n2.Search\n3.Delete");
+                System.out.println("---------");
+                String in = input.nextLine();
+                int choice = Integer.parseInt(in);
+                
+                //Keep trying to work on user's choice.
+                while(true) {
+                    try{
+                        //take action based on user choice.
+                        int id;
+                        switch(choice) {
+                            case 1:
+                                printAllStudents();
+                                break;
+                            case 2:
+                                System.out.println("Enter RegNo:");;
+                                id = Integer.parseInt(input.nextLine());
+                                searchRecord(id);
+                                break;
+                            case 3:
+                                System.out.println("Enter RegNo:");
+                                id = Integer.parseInt(input.nextLine());
+                                deleteRecord(id);
+                                break;
+                            default:
+                                throw new Exception("Choose a correct option");
+                        }
+
+                        break;
+                    } 
+                    //Database Error
+                    catch(SQLException e) {
+                        System.out.println("e1");
+                        System.err.println(e);
+                    }
+                    //Unexcepted Input
+                    catch(Exception e) {
+                        System.out.println("Incorrect Value Entered!");
+                        System.err.println(e);
+                    } 
+                } //End while
+            }  //End while
+        } 
+        catch(Exception e) {
+            System.out.println("e3");
+            System.err.println(e);
+        }
+        
     }
     
     public static void printAllStudents() throws SQLException {
@@ -70,7 +133,7 @@ public class SCLab06Part2 {
         //Creating query
         st = conn.createStatement();
         query = "DELETE FROM `university`.`students` WHERE `RegNo`='"+id+"';";
-        rs = st.executeQuery(query);
+        st.executeUpdate(query);
 
         //Printing Results.
         System.out.println("\nDeleted Record.");
